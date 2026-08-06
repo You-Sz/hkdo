@@ -6,8 +6,8 @@ const nextConfig: NextConfig = {
   ...(isGitHubPages
     ? {
         output: "export" as const,
-        basePath: "/hokkaido-2027",
-        assetPrefix: "/hokkaido-2027/",
+        basePath: "/hkdo",
+        assetPrefix: "/hkdo/",
         images: { unoptimized: true },
         // The repository also contains Cloudflare-only helper modules that are
         // not part of this static itinerary page.

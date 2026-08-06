@@ -1,6 +1,6 @@
 # 北國十日｜北海道冬日旅誌
 
-2027 年北海道十日行程網站：https://you-sz.github.io/hokkaido-2027/
+2027 年北海道十日行程網站：https://you-sz.github.io/hkdo/
 
 Built with
 [vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and

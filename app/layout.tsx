@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   icons: {
     icon:
       process.env.GITHUB_ACTIONS === "true"
-        ? "/hokkaido-2027/favicon.svg"
+        ? "/hkdo/favicon.svg"
         : "/favicon.svg",
   },
   openGraph: { title: "北國十日｜北海道冬日旅誌", description: "一條不繞路的北海道冬日軌跡。", type: "website" },
