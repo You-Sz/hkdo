@@ -1,5 +1,5 @@
 const days = [
-  { date:"01.01", weekday:"FRI", city:"札幌", title:"抵達雪國的第一夜", tone:"blue", stops:[
+  { date:"01.01", weekday:"FRI", city:"札幌", title:"抵達雪國的第一夜", tone:"blue", transport:["飛機","JR 快速 Airport","札幌地下鐵","步行"], stops:[
     ["09:15","台灣起飛","前往新千歲機場；日本時間快台灣 1 小時。"],
     ["14:05","抵達新千歲機場","預留 75–90 分鐘入境、領行李及購買交通票券。"],
     ["15:30","前往札幌","力求 15:30 前離開機場；搭 JR 快速 Airport，再轉地下鐵前往薄野。"],
@@ -7,21 +7,21 @@ const days = [
     ["17:20","北海道神宮參拜","參拜時間可能提早結束，抵達後先參拜再領御守；若航班延誤則順延至 1/2。"],
     ["18:40","薄野晚餐","參拜後返回薄野吃晚餐；想吃拉麵可安排麵屋雪風。"],
     ["20:00","回飯店休息","辦理入住、整理行李，第一晚不再安排逛街。"]]},
-  { date:"01.02", weekday:"SAT", city:"札幌", title:"札幌市區散步與逛街", tone:"ice", stops:[
+  { date:"01.02", weekday:"SAT", city:"札幌", title:"札幌市區散步與逛街", tone:"ice", transport:["札幌地下鐵","步行"], stops:[
     ["07:30","Vessel Hotel 早餐","在飯店享用早餐，吃完稍作休息再前往大通。"],
     ["09:30","札幌時計台・大通公園","看時計台外觀並沿大通公園散步；年始室內開放時間需再確認。"],
     ["10:40","札幌電視塔","登塔俯瞰大通；若年始延後開門，就先逛大通周邊再回來。"],
     ["11:45","札幌市區午餐","在大通附近選擇年始有營業的餐廳，午餐後直接前往百貨商圈。"],
     ["13:00","百貨商圈・逛街","逛丸井今井、三越與地下街；實際年始營業時間年底再確認。"],
     ["17:00","狸小路商店街","從大通一路往薄野逛狸小路，吃晚餐後步行回飯店。"]]},
-  { date:"01.03", weekday:"SUN", city:"美瑛・富良野", title:"一日遊團的純白風景", tone:"snow", stops:[
+  { date:"01.03", weekday:"SUN", city:"美瑛・富良野", title:"一日遊團的純白風景", tone:"snow", transport:["一日遊巴士","雪上摩托車"], stops:[
     ["07:15","集合報到","以旅行團通知為準，建議提早 15 分鐘抵達。"],
     ["10:30","美瑛聖誕樹","郊外拍照停留；時間依雪況與交通調整。"],
     ["11:30","白鬚瀑布","冬季藍色瀑布與雪景。"],
     ["13:30","四季彩之丘","午餐與雪上摩托車；確認活動是否含在團費內。"],
     ["16:30","森林精靈露台","等待點燈，逛森林木屋。"],
     ["20:00","返回札幌","薄野簡單晚餐，提早休息。"]]},
-  { date:"01.04", weekday:"MON", city:"小樽", title:"沿著堺町走向運河暮色", tone:"blue", stops:[
+  { date:"01.04", weekday:"MON", city:"小樽", title:"沿著堺町走向運河暮色", tone:"blue", transport:["JR 函館本線","步行"], stops:[
     ["08:00","札幌站出發","搭 JR 前往南小樽站；抵達後先走往住吉神社。"],
     ["09:00","住吉神社","雪中參拜；階梯濕滑要慢走，09:25 左右離開。"],
     ["09:40","吉伊卡哇 MOGUMOGU 本舖小樽店","預留完整 1 小時購買小樽限定商品；目前須透過官方 LINE 事前預約入店。"],
@@ -33,7 +33,7 @@ const days = [
     ["15:10","彩繪玻璃美術館","參觀小樽藝術村；2027 年始營業需再確認。"],
     ["16:30","小樽運河","抵達運河欣賞入夜後的雪景與點燈。"],
     ["18:00","返回札幌","由小樽站搭 JR 回札幌。"]]},
-  { date:"01.05", weekday:"TUE", city:"洞爺湖", title:"湖畔、溫泉街與一泊二食", tone:"ice", stops:[
+  { date:"01.05", weekday:"TUE", city:"洞爺湖", title:"湖畔、溫泉街與一泊二食", tone:"ice", transport:["步行","JR 特急北斗","道南巴士／飯店接駁"], stops:[
     ["07:30","Vessel Hotel 早餐","在飯店悠閒享用早餐，吃完回房整理並確認行李。"],
     ["08:15","札幌退房","辦理退房後前往札幌站，預留冬季移動緩衝。"],
     ["09:30 前後","特急北斗","改搭上午較晚班次前往洞爺；實際車次待 2027 正式時刻表公布後預約。"],
@@ -42,7 +42,7 @@ const days = [
     ["14:00","溫泉街・洞爺湖畔散策","沿湖看雪景、逛伴手禮店與咖啡館，依天候彈性停留。"],
     ["15:30","湖之栖入住・泡湯","回飯店入住、休息並享受溫泉。"],
     ["18:00","一泊二食","享用飯店晚餐，晚上留白休息。"]]},
-  { date:"01.06", weekday:"WED", city:"函館", title:"坡道盡頭，等待百萬夜景", tone:"snow", stops:[
+  { date:"01.06", weekday:"WED", city:"函館", title:"坡道盡頭，等待百萬夜景", tone:"snow", transport:["飯店接駁","JR 特急北斗","步行","函館山纜車"], stops:[
     ["08:00","飯店早餐","享用早餐後保留一個悠閒上午，不急著離開飯店。"],
     ["09:30","最後泡湯・湖畔散步","依天候選擇再泡一次溫泉，或到湖畔短暫散步。"],
     ["11:00","湖之栖退房","辦理退房並搭飯店接駁前往洞爺站；接駁時間需事先確認。"],
@@ -52,7 +52,7 @@ const days = [
     ["15:40","元町・八幡坂","欣賞教會群、坡道與傍晚港景，冬季路滑要控制停留時間。"],
     ["16:30","函館山","入夜後上山看夜景；冬季先確認纜車與道路是否運行。"],
     ["19:00","函館晚餐","大門橫丁或海鮮料理；鹽味拉麵留到 1/7 午餐。"]]},
-  { date:"01.07", weekday:"THU", city:"函館 → 札幌", title:"朝市與星形城郭", tone:"blue", stops:[
+  { date:"01.07", weekday:"THU", city:"函館 → 札幌", title:"朝市與星形城郭", tone:"blue", transport:["函館市電","JR 特急北斗","札幌地下鐵","步行"], stops:[
     ["07:00","函館朝市","飯店就在朝市旁，吃海鮮早餐最順。"],
     ["08:30","退房・寄放行李","搭市電前往五稜郭公園前。"],
     ["09:30","五稜郭塔","俯瞰雪中的星形城郭。"],
@@ -62,7 +62,7 @@ const days = [
     ["18:30","Keio Prelia 入住","放好行李、稍作休息；當晚不再硬排藻岩山。"],
     ["19:30","狸小路商店街（可選）","體力足夠就搭地下鐵前往狸小路吃晚餐、補逛；累了則留在札幌站用餐。"],
     ["21:30","夜パフェ専門店 ななかま堂（可選）","晚餐後到薄野吃深夜聖代；若從函館回來太累就直接回飯店，2027 年營業時間需再確認。"]]},
-  { date:"01.08", weekday:"FRI", city:"札幌", title:"圓山晨景與北大校園", tone:"ice", stops:[
+  { date:"01.08", weekday:"FRI", city:"札幌", title:"圓山晨景與北大校園", tone:"ice", transport:["札幌地下鐵","步行"], stops:[
     ["08:00","北海道神宮・圓山公園","回到圓山一帶悠閒散步；若 1/1 參拜匆忙，可補領御守、拍雪景。"],
     ["09:00","六花亭 神宮茶屋店","在境內吃現烤限定甜點「判官さま」；實際營業時間出發前再確認。"],
     ["09:40","森彥 MORIHICO. 本店","步行到南 2 條西 26 丁目的老屋咖啡館，吃早午餐。"],
@@ -71,7 +71,7 @@ const days = [
     ["13:40","北大マルシェ Café & Labo","到百年紀念會館品嘗北大牛奶、自製起司餐點或義式冰淇淋。"],
     ["15:00","六花亭札幌本店・雪印パーラー","購買伴手禮、品嘗甜點；早上吃得較多時可擇一或只外帶。"],
     ["18:30","成吉思汗烤肉晚餐","不在札幌啤酒園用餐，改選札幌站、薄野或狸小路附近的成吉思汗烤肉店。"]]},
-  { date:"01.09", weekday:"SAT", city:"札幌", title:"啤酒文化與最後購物", tone:"snow", stops:[
+  { date:"01.09", weekday:"SAT", city:"札幌", title:"啤酒文化與最後購物", tone:"snow", transport:["札幌地下鐵","巴士","步行","市電（藻岩山備案）"], stops:[
     ["08:00","札幌場外市場・海鮮早餐","前往中央卸売市場場外市場吃海鮮丼或壽司，並預留逛市場的時間；餐廳選定後再確認營業。"],
     ["09:30","前往札幌啤酒博物館","從場外市場搭地下鐵轉巴士前往，冬季移動預留約 1 小時。"],
     ["11:00","札幌啤酒博物館","開館後入場參觀；2026 年改裝後自由參觀與導覽皆需購票，導覽建議預約。"],
@@ -81,7 +81,7 @@ const days = [
     ["17:30","藻岩山觀景台備案","只有函館山夜景沒看到、且天候與纜車運行正常時才執行。"],
     ["20:00","狸小路・居酒屋","若不去藻岩山可提早前往；完成最後採買並吃旅行最後一晚晚餐。"],
     ["22:00","薄野喫茶 Purple Dahlia","晚餐後吃深夜聖代；星期六目前營業至凌晨 1:00，熱門時段建議預約。"]]},
-  { date:"01.10", weekday:"SUN", city:"返程", title:"把雪景裝進行李", tone:"blue", stops:[
+  { date:"01.10", weekday:"SUN", city:"返程", title:"把雪景裝進行李", tone:"blue", transport:["步行","JR 快速 Airport","飛機"], stops:[
     ["08:30","札幌早餐","飯店附近用餐、整理最後行李。"],
     ["10:30","飯店退房","步行前往札幌站。"],
     ["11:00","前往新千歲機場","冬季預留列車延誤緩衝。"],
@@ -128,7 +128,7 @@ export default function Home(){return <main>
   <section className="overview shell" id="overview"><div className="sectionHeading"><p>TRIP AT A GLANCE</p><h2>十日路線，一眼掌握</h2></div><div className="overviewGrid"><article><span>去程</span><strong>01.01 · 09:15</strong><small>台灣 → 新千歲 14:05</small></article><article><span>移動核心</span><strong>JR 特急北斗</strong><small>札幌 → 洞爺 → 函館 → 札幌</small></article><article><span>回程</span><strong>01.10 · 15:20</strong><small>新千歲 → 台灣</small></article></div>
   <div className="quickNav">{days.map((d,i)=><a href={`#day-${i+1}`} key={d.date}><strong>{d.date}</strong><span>{d.city}</span></a>)}</div></section>
 
-  <section className="itinerary shell" id="itinerary">{days.map((d,i)=><article className={`day day-${d.tone}`} id={`day-${i+1}`} key={d.date}><div className="dayDate"><span>DAY {String(i+1).padStart(2,"0")}</span><strong>{d.date}</strong><em>{d.weekday}</em></div><div className="dayContent"><div className="dayTitle"><p>{d.city}</p><h2>{d.title}</h2></div><ol className="timeline">{d.stops.map(s=><li key={`${d.date}-${s[0]}-${s[1]}`}><time>{s[0]}</time><div><h3>{s[1]}</h3><p>{s[2]}</p></div></li>)}</ol></div></article>)}</section>
+  <section className="itinerary shell" id="itinerary">{days.map((d,i)=><article className={`day day-${d.tone}`} id={`day-${i+1}`} key={d.date}><div className="dayDate"><span>DAY {String(i+1).padStart(2,"0")}</span><strong>{d.date}</strong><em>{d.weekday}</em></div><div className="dayContent"><div className="dayTitle"><p>{d.city}</p><h2>{d.title}</h2></div><div className="dayTransport"><b>當日交通</b><div>{d.transport.map(item=><span key={item}>{item}</span>)}</div></div><ol className="timeline">{d.stops.map(s=><li key={`${d.date}-${s[0]}-${s[1]}`}><time>{s[0]}</time><div><h3>{s[1]}</h3><p>{s[2]}</p></div></li>)}</ol></div></article>)}</section>
 
   <section className="checklists shell" id="checklists"><div className="sectionHeading"><p>BOOK &amp; PLAN B</p><h2>預約與備案清單</h2></div><div className="listColumns"><article className="listPanel bookingList"><div className="listPanelTitle"><span>RESERVATIONS</span><h3>要預定的</h3></div><ol>{reservations.map((item,i)=><li key={item[1]}><b>{String(i+1).padStart(2,"0")}</b><div><time>{item[0]}</time><h4>{item[1]}</h4><p>{item[2]}</p></div></li>)}</ol></article><article className="listPanel backupList"><div className="listPanelTitle"><span>ALTERNATIVES</span><h3>備案</h3></div><ol>{backups.map((item,i)=><li key={item[0]}><b>{String(i+1).padStart(2,"0")}</b><div><h4>{item[0]}</h4><p>{item[1]}</p></div></li>)}</ol></article></div></section>
 
