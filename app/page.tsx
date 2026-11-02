@@ -7,7 +7,7 @@ const days = [
     ["17:20","北海道神宮參拜","參拜時間可能提早結束，抵達後先參拜再領御守；若航班延誤則順延至 1/2。"],
     ["18:40","薄野晚餐","參拜後返回薄野吃晚餐；想吃拉麵可安排麵屋雪風。"],
     ["20:00","回飯店休息","辦理入住、整理行李，第一晚不再安排逛街。"]]},
-  { date:"01.02", weekday:"SAT", city:"札幌", title:"札幌市區散步與逛街", tone:"ice", transport:["札幌地下鐵","步行"], mapMode:"walking", mapStops:["Vessel Hotel Campana Susukino","札幌時計台","札幌電視塔","奧芝商店 奥’clock（札幌時計台ビル）","大通公園","丸井今井札幌本店","札幌三越","狸小路商店街"], backup:[["大雪・室內行程","若地面交通受影響，就縮短戶外散步，改逛地下街、百貨與狸小路。"]], stops:[
+  { date:"01.02", weekday:"SAT", city:"札幌", title:"札幌市區散步與逛街", tone:"ice", transport:["札幌地下鐵","步行"], mapMode:"walking", mapStops:["Vessel Hotel Campana Susukino","札幌時計台","札幌電視塔","奧芝商店 奥’clock（札幌時計台ビル）","大通公園","丸井今井札幌本店","札幌三越","狸小路商店街"], mapAlternatives:["スープカレーGARAKU 札幌本店","SHO-RIN すすきの店"], backup:[["湯咖哩午餐備案","若奧芝商店排太久或未營業，改吃 GARAKU 札幌本店；SHO-RIN すすきの店也列為備選，但店方目前頁面標示 17:00 開店，午餐及年始營業需先確認。"],["大雪・室內行程","若地面交通受影響，就縮短戶外散步，改逛地下街、百貨與狸小路。"]], stops:[
     ["07:30","Vessel Hotel 早餐","在飯店享用早餐，吃完稍作休息再前往大通。"],
     ["09:30","札幌時計台・大通公園","看時計台外觀並沿大通公園散步；年始室內開放時間需再確認。"],
     ["10:40","札幌電視塔","登塔俯瞰大通；若年始延後開門，就先逛大通周邊再回來。"],
@@ -119,7 +119,7 @@ function mapsDirectionsUrl(stops: string[], mode: string) {
   return `https://www.google.com/maps/dir/?${params.toString()}`;
 }
 
-function DailyRouteMap({ stops, mode, note, dayNumber }: { stops: string[]; mode: string; note?: string; dayNumber: number }) {
+function DailyRouteMap({ stops, mode, note, alternatives, dayNumber }: { stops: string[]; mode: string; note?: string; alternatives?: string[]; dayNumber: number }) {
   const points = stops.map((_, i) => {
     const row = Math.floor(i / 4);
     const col = i % 4;
@@ -135,6 +135,7 @@ function DailyRouteMap({ stops, mode, note, dayNumber }: { stops: string[]; mode
     </div>
     <ol className="routeStopList">{stops.map((stop, i) => <li key={`${i}-${stop}`}><span>{String(i + 1).padStart(2, "0")}</span>{stop}</li>)}</ol>
     {note && <p className="routeNote">{note}</p>}
+    {alternatives?.length ? <div className="mapAlternatives"><b>午餐備案｜Google Maps</b>{alternatives.map(place => <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place)}`} target="_blank" rel="noreferrer" key={place}>{place} ↗</a>)}</div> : null}
     <a className="mapsLink" href={mapsDirectionsUrl(stops, mode)} target="_blank" rel="noreferrer">在 Google Maps 開啟路線 <span>↗</span></a>
     <small className="routeCaption">路線順序示意，非比例地圖</small>
   </aside>;
@@ -150,7 +151,7 @@ export default function Home(){return <main>
   <section className="overview shell" id="overview"><div className="sectionHeading"><p>TRIP AT A GLANCE</p><h2>十日路線，一眼掌握</h2></div><div className="overviewGrid"><article><span>去程</span><strong>01.01 · 09:15</strong><small>台灣 → 新千歲 14:05</small></article><article><span>移動核心</span><strong>JR 特急北斗</strong><small>札幌 → 洞爺 → 函館 → 札幌</small></article><article><span>回程</span><strong>01.10 · 15:20</strong><small>新千歲 → 台灣</small></article></div>
   <div className="quickNav">{days.map((d,i)=><a href={`#day-${i+1}`} key={d.date}><strong>{d.date}</strong><span>{d.city}</span></a>)}</div></section>
 
-  <section className="itinerary shell" id="itinerary">{days.map((d,i)=><article className={`day day-${d.tone}`} id={`day-${i+1}`} key={d.date}><div className="dayDate"><span>DAY {String(i+1).padStart(2,"0")}</span><strong>{d.date}</strong><em>{d.weekday}</em></div><div className="dayContent"><div className="dayTitle"><p>{d.city}</p><h2>{d.title}</h2></div><div className="dayTransport"><b>當日交通</b><div>{d.transport.map(item=><span key={item}>{item}</span>)}</div></div><div className="dayBackups"><b>當日備案</b><div>{d.backup.map(item=><article key={item[0]}><h3>{item[0]}</h3><p>{item[1]}</p></article>)}</div></div><div className="dayColumns"><ol className="timeline">{d.stops.map(s=><li key={`${d.date}-${s[0]}-${s[1]}`}><time>{s[0] as string}</time><div><h3>{s[1] as string}</h3><p>{s[2] as string}</p>{Array.isArray(s[3])&&<ul className="stopDetails">{s[3].map(item=><li key={item}>{item}</li>)}</ul>}</div></li>)}</ol><DailyRouteMap stops={d.mapStops} mode={d.mapMode} note={d.mapNote} dayNumber={i+1}/></div></div></article>)}</section>
+  <section className="itinerary shell" id="itinerary">{days.map((d,i)=><article className={`day day-${d.tone}`} id={`day-${i+1}`} key={d.date}><div className="dayDate"><span>DAY {String(i+1).padStart(2,"0")}</span><strong>{d.date}</strong><em>{d.weekday}</em></div><div className="dayContent"><div className="dayTitle"><p>{d.city}</p><h2>{d.title}</h2></div><div className="dayTransport"><b>當日交通</b><div>{d.transport.map(item=><span key={item}>{item}</span>)}</div></div><div className="dayBackups"><b>當日備案</b><div>{d.backup.map(item=><article key={item[0]}><h3>{item[0]}</h3><p>{item[1]}</p></article>)}</div></div><div className="dayColumns"><ol className="timeline">{d.stops.map(s=><li key={`${d.date}-${s[0]}-${s[1]}`}><time>{s[0] as string}</time><div><h3>{s[1] as string}</h3><p>{s[2] as string}</p>{Array.isArray(s[3])&&<ul className="stopDetails">{s[3].map(item=><li key={item}>{item}</li>)}</ul>}</div></li>)}</ol><DailyRouteMap stops={d.mapStops} mode={d.mapMode} note={d.mapNote} alternatives={d.mapAlternatives} dayNumber={i+1}/></div></div></article>)}</section>
 
   <section className="checklists shell" id="checklists"><div className="sectionHeading"><p>BOOK AHEAD</p><h2>預約清單</h2></div><div className="listColumns"><article className="listPanel bookingList"><div className="listPanelTitle"><span>RESERVATIONS</span><h3>要預定的</h3></div><ol>{reservations.map((item,i)=><li key={item[1]}><b>{String(i+1).padStart(2,"0")}</b><div><time>{item[0]}</time><h4>{item[1]}</h4><p>{item[2]}</p></div></li>)}</ol></article></div></section>
 
