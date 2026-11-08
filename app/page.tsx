@@ -55,7 +55,7 @@ const days = [
     ["15:40","元町・八幡坂","欣賞教會群、坡道與傍晚港景，冬季路滑要控制停留時間。"],
     ["16:30","函館山","入夜後上山看夜景；冬季先確認纜車與道路是否運行。"],
     ["19:00","函館晚餐","大門橫丁或海鮮料理；鹽味拉麵留到 1/7 午餐。"]]},
-  { date:"01.07", weekday:"THU", city:"函館 → 札幌", title:"朝市、星形城郭與藻岩山備案", tone:"blue", transport:["函館市電","JR 特急北斗","札幌地下鐵","市電・藻岩山接駁","步行"], mapMode:"transit", mapStops:["函館朝市","五稜郭タワー","函館駅","札幌駅","Keio Prelia Hotel Sapporo","藻岩山ロープウェイ","夜パフェ専門店 ななかま堂"], backup:[["藻岩山觀景台","只有 1/6 沒看到函館夜景，且天候與纜車正常時才安排；建議先在札幌站附近用晚餐，再前往山麓搭纜車。冬季營運與末班時間出發前確認。"],["晚抵札幌","若特急延誤或太累，就取消藻岩山與深夜聖代，改在札幌站附近吃晚餐後回飯店。"]], stops:[
+  { date:"01.07", weekday:"THU", city:"函館 → 札幌", title:"朝市、星形城郭與藻岩山夜景", tone:"blue", transport:["函館市電","JR 特急北斗","札幌地下鐵","市電・藻岩山接駁","步行"], mapMode:"transit", mapStops:["函館朝市","五稜郭タワー","函館駅","札幌駅","Keio Prelia Hotel Sapporo","藻岩山ロープウェイ","夜パフェ専門店 ななかま堂"], backup:[["晚抵札幌","若特急延誤，簡化晚餐並取消深夜聖代，優先保留藻岩山行程；纜車是否運行依當日公告。"]], stops:[
     ["07:00","函館朝市","飯店就在朝市旁，吃海鮮早餐最順。"],
     ["08:30","退房・寄放行李","搭市電前往五稜郭公園前。"],
     ["09:30","五稜郭塔","俯瞰雪中的星形城郭。"],
@@ -63,8 +63,8 @@ const days = [
     ["13:30","回函館站取行李","購買車上飲料與點心。"],
     ["14:30","特急北斗・函館→札幌","指定席偏好 D 列偶數座；預留約 3.5–4 小時，時間依正式班表與劃位結果調整。"],
     ["18:30","Keio Prelia 入住","放好行李、稍作休息；今晚不安排狸小路商店街。"],
-    ["19:00","札幌站周邊晚餐","先在飯店或札幌站附近用餐；若要啟用藻岩山備案，留意後續交通與纜車時間。"],
-    ["20:30","藻岩山觀景台・夜景（備案）","只有 1/6 沒看到函館夜景，且天候、纜車運行正常時才前往；冬季上山末班時間出發前確認。"],
+    ["19:00","札幌站周邊晚餐","先在飯店或札幌站附近簡單用餐，並預留交通時間，不影響藻岩山行程。"],
+    ["20:30","藻岩山觀景台・夜景","固定安排；出發前確認天候、纜車運行與冬季末班時間。"],
     ["22:30 前後","夜パフェ専門店 ななかま堂（可選）","若看完夜景仍有體力與時間，再到薄野吃深夜聖代；若交通或纜車延誤就取消，營業時間出發前確認。"]]},
   { date:"01.08", weekday:"FRI", city:"札幌", title:"圓山晨景、海鮮與北大校園", tone:"ice", transport:["札幌地下鐵","步行"], mapMode:"transit", mapStops:["北海道神宮","六花亭 神宮茶屋店","札幌場外市場","北海道大学総合博物館","北大マルシェ Café & Labo","六花亭 札幌本店","回転寿しトリトン 北8条光星店"], mapAlternatives:[["合資会社 蟹ゆで名人｜販售店，店內用餐先確認","https://maps.app.goo.gl/hFp3jeFqEaW9CwMo7"],["北海道特産品販売／おもひで食堂｜附設食堂","https://maps.app.goo.gl/mRdXWagdZh7PfV1V9"],["根室杉山水産／うめぇ堂｜螃蟹與海鮮餐點","https://maps.app.goo.gl/Um5kCNCJWKRbAZta7"]], mapOptionalPlaces:["森彦 MORIHICO. 本店"], backup:[["森彥 MORIHICO. 本店（Optional）","場外市場吃完螃蟹後若還有時間、也想喝咖啡，再前往森彥；若時間較趕就直接去北海道大學。"],["札幌諏訪神社","若北海道神宮周邊提早逛完，可增加另一處神社參拜，以冬季花手水與雪景為主。"],["定山溪溫泉","若更想泡湯，可用定山溪半日或一日往返替換部分札幌行程；先確認巴士與日歸溫泉時間。"]], stops:[
     ["08:00","北海道神宮・圓山公園","回到圓山一帶悠閒散步；若 1/1 參拜匆忙，可補領御守、拍雪景。"],
@@ -159,6 +159,6 @@ export default function Home(){return <main>
 
   <section className="checklists shell" id="checklists"><div className="sectionHeading"><p>BOOK AHEAD</p><h2>預約清單</h2></div><div className="listColumns"><article className="listPanel bookingList"><div className="listPanelTitle"><span>RESERVATIONS</span><h3>要預定的</h3></div><ol>{reservations.map((item,i)=><li key={item[1]}><b>{String(i+1).padStart(2,"0")}</b><div><time>{item[0]}</time><h4>{item[1]}</h4><p>{item[2]}</p></div></li>)}</ol></article></div></section>
 
-  <section className="notes" id="notes"><div className="shell"><div className="sectionHeading light"><p>NOTES BEFORE DEPARTURE</p><h2>出發前最後確認</h2></div><div className="notesGrid"><article><b>01</b><h3>北海道神宮參拜</h3><p>神宮可能提早結束參拜，這個安排非常吃入境速度。若 16:40 還沒抵達飯店，1/1 直接改市區晚餐與休息；1/8 早上仍會前往北海道神宮與圓山一帶。</p></article><article><b>02</b><h3>年始營業</h3><p>時計台、電視塔、百貨、餐廳與小樽各店的年始時間，請於出發前再次確認；1/8 場外市場也需確認選定餐廳是否營業。</p></article><article><b>03</b><h3>洞爺交通</h3><p>先確認湖之栖往返洞爺站的接駁時間；昭和新山與有珠山只有啟用備案時，才需要另約計程車或包車。</p></article><article><b>04</b><h3>風雪備案</h3><p>函館山與有珠山纜車可能因強風停駛；藻岩山移至 1/7 傍晚備用，支笏湖則保留為可替換 1/9 全日的方案。</p></article><article><b>05</b><h3>指定席・餐廳</h3><p>特急北斗建議提早預約指定席；1/8 Toriton Kita 8 不接受座位預約，建議現場候位；1/7 藻岩山備案需視函館夜景和天候，Purple Dahlia 也建議事先預約。</p></article><article><b>06</b><h3>時間性質</h3><p>頁面中的時間是順路規劃值，JR、巴士、飯店接駁與旅行團時間須以正式預約資料覆蓋。</p></article></div></div></section>
+  <section className="notes" id="notes"><div className="shell"><div className="sectionHeading light"><p>NOTES BEFORE DEPARTURE</p><h2>出發前最後確認</h2></div><div className="notesGrid"><article><b>01</b><h3>北海道神宮參拜</h3><p>神宮可能提早結束參拜，這個安排非常吃入境速度。若 16:40 還沒抵達飯店，1/1 直接改市區晚餐與休息；1/8 早上仍會前往北海道神宮與圓山一帶。</p></article><article><b>02</b><h3>年始營業</h3><p>時計台、電視塔、百貨、餐廳與小樽各店的年始時間，請於出發前再次確認；1/8 場外市場也需確認選定餐廳是否營業。</p></article><article><b>03</b><h3>洞爺交通</h3><p>先確認湖之栖往返洞爺站的接駁時間；昭和新山與有珠山只有啟用備案時，才需要另約計程車或包車。</p></article><article><b>04</b><h3>風雪備案</h3><p>函館山與有珠山纜車可能因強風停駛；藻岩山固定安排在 1/7 晚上，僅於纜車停駛或安全條件不允許時調整；支笏湖保留為可替換 1/9 全日的方案。</p></article><article><b>05</b><h3>指定席・餐廳</h3><p>特急北斗建議提早預約指定席；1/8 Toriton Kita 8 不接受座位預約，建議現場候位；1/7 藻岩山為固定行程，出發前確認天候與纜車運行，Purple Dahlia 也建議事先預約。</p></article><article><b>06</b><h3>時間性質</h3><p>頁面中的時間是順路規劃值，JR、巴士、飯店接駁與旅行團時間須以正式預約資料覆蓋。</p></article></div></div></section>
   <footer><div className="shell"><strong>北國十日</strong><p>HOKKAIDO WINTER JOURNAL · 2027</p><a href="#top">回到頁首 ↑</a></div></footer>
   </main>}
