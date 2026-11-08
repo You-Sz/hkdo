@@ -65,16 +65,15 @@ const days = [
     ["18:30","Keio Prelia 入住","放好行李、稍作休息；當晚不再硬排藻岩山。"],
     ["19:30","狸小路商店街（可選）","體力足夠就搭地下鐵前往狸小路吃晚餐、補逛；累了則留在札幌站用餐。"],
     ["21:30","夜パフェ専門店 ななかま堂（可選）","晚餐後到薄野吃深夜聖代；若從函館回來太累就直接回飯店，2027 年營業時間需再確認。"]]},
-  { date:"01.08", weekday:"FRI", city:"札幌", title:"圓山晨景、海鮮與北大校園", tone:"ice", transport:["札幌地下鐵","步行"], mapMode:"transit", mapStops:["北海道神宮","六花亭 神宮茶屋店","札幌場外市場","森彦 本店","北海道大学総合博物館","北大マルシェ Café & Labo","六花亭 札幌本店","薄野"], backup:[["札幌諏訪神社","若北海道神宮周邊提早逛完，可增加另一處神社參拜，以冬季花手水與雪景為主。"],["定山溪溫泉","若更想泡湯，可用定山溪半日或一日往返替換部分札幌行程；先確認巴士與日歸溫泉時間。"]], stops:[
+  { date:"01.08", weekday:"FRI", city:"札幌", title:"圓山晨景、海鮮與北大校園", tone:"ice", transport:["札幌地下鐵","步行"], mapMode:"transit", mapStops:["北海道神宮","六花亭 神宮茶屋店","札幌場外市場","北海道大学総合博物館","北大マルシェ Café & Labo","六花亭 札幌本店","薄野"], mapOptionalPlaces:["森彦 MORIHICO. 本店"], backup:[["森彥 MORIHICO. 本店（Optional）","場外市場吃完螃蟹後若還有時間、也想喝咖啡，再前往森彥；若時間較趕就直接去北海道大學。"],["札幌諏訪神社","若北海道神宮周邊提早逛完，可增加另一處神社參拜，以冬季花手水與雪景為主。"],["定山溪溫泉","若更想泡湯，可用定山溪半日或一日往返替換部分札幌行程；先確認巴士與日歸溫泉時間。"]], stops:[
     ["08:00","北海道神宮・圓山公園","回到圓山一帶悠閒散步；若 1/1 參拜匆忙，可補領御守、拍雪景。"],
     ["09:00","六花亭 神宮茶屋店","在境內吃現烤限定甜點「判官さま」；實際營業時間出發前再確認。"],
     ["10:00","前往札幌場外市場","從圓山一帶搭地鐵／計程車前往市場，車程依路況調整。"],
     ["10:30","札幌場外市場・海鮮早午餐","吃海鮮丼或壽司並逛市場；店家年始營業與最後點餐時間出發前確認。"],
-    ["12:00","森彥 MORIHICO. 本店","到南 2 條西 26 丁目的老屋咖啡館喝咖啡、稍作休息；若市場吃得較飽就不另點正餐。"],
-    ["13:30","北海道大學","搭車返回札幌站，從正門進校園看雪景。"],
-    ["14:00","北海道大學綜合博物館","參觀校史、自然科學與研究標本展示；目前免費入館、17:00 閉館。"],
-    ["15:30","北大マルシェ Café & Labo","到百年紀念會館品嘗北大牛奶、自製起司餐點或義式冰淇淋。"],
-    ["16:30","六花亭札幌本店・雪印パーラー","購買伴手禮、品嘗甜點；依體力與胃口擇一或只外帶。"],
+    ["12:00（Optional）","森彥 MORIHICO. 本店","場外市場吃完螃蟹後若還有時間、想喝咖啡再前往；如果用餐較久或不想趕，就跳過直接去北大。"],
+    ["13:30 前後","北海道大學・綜合博物館","依是否去森彥彈性調整到校時間；參觀校史、自然科學與研究標本展示，目前免費入館、17:00 閉館。"],
+    ["15:30 前後","北大マルシェ Café & Labo","到百年紀念會館品嘗北大牛奶、自製起司餐點或義式冰淇淋；時間依前段行程微調。"],
+    ["16:30 前後","六花亭札幌本店・雪印パーラー","購買伴手禮、品嘗甜點；依體力與胃口擇一或只外帶。"],
     ["18:30","成吉思汗烤肉晚餐","不在札幌啤酒園用餐，改選札幌站、薄野或狸小路附近的成吉思汗烤肉店。"]]},
   { date:"01.09", weekday:"SAT", city:"札幌", title:"啤酒文化與最後購物", tone:"snow", transport:["札幌地下鐵","巴士","步行","市電（藻岩山備案）"], mapMode:"transit", mapStops:["サッポロビール博物館","北海道庁赤れんが庁舎","大通","藻岩山ロープウェイ","狸小路商店街","Purple Dahlia"], backup:[["藻岩山觀景台","只有函館夜景沒看到，且天候與纜車運行正常時才於傍晚前往。"],["支笏湖一日遊","若找到合適的一日團，可整日替換啤酒博物館與購物；1 月上旬通常尚未進入冰濤祭。"],["白色戀人公園・札幌市區","大雪時改以白色戀人公園、地下街與室內購物為主。"]], stops:[
     ["08:30","札幌早餐","在飯店或附近用早餐，出發前確認行李與購物清單。"],
@@ -126,7 +125,7 @@ function mapsDirectionsUrl(stops: string[], mode: string) {
   return `https://www.google.com/maps/dir/?${params.toString()}`;
 }
 
-function DailyRouteMap({ stops, mode, note, alternatives, dayNumber }: { stops: string[]; mode: string; note?: string; alternatives?: string[]; dayNumber: number }) {
+function DailyRouteMap({ stops, mode, note, alternatives, optionalPlaces, dayNumber }: { stops: string[]; mode: string; note?: string; alternatives?: string[]; optionalPlaces?: string[]; dayNumber: number }) {
   const points = stops.map((_, i) => {
     const row = Math.floor(i / 4);
     const col = i % 4;
@@ -143,6 +142,7 @@ function DailyRouteMap({ stops, mode, note, alternatives, dayNumber }: { stops: 
     <ol className="routeStopList">{stops.map((stop, i) => <li key={`${i}-${stop}`}><span>{String(i + 1).padStart(2, "0")}</span>{stop}</li>)}</ol>
     {note && <p className="routeNote">{note}</p>}
     {alternatives?.length ? <div className="mapAlternatives"><b>午餐備案｜Google Maps</b>{alternatives.map(place => <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place)}`} target="_blank" rel="noreferrer" key={place}>{place} ↗</a>)}</div> : null}
+    {optionalPlaces?.length ? <div className="mapAlternatives"><b>選擇性停靠｜Google Maps</b>{optionalPlaces.map(place => <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place)}`} target="_blank" rel="noreferrer" key={place}>{place} ↗</a>)}</div> : null}
     <a className="mapsLink" href={mapsDirectionsUrl(stops, mode)} target="_blank" rel="noreferrer">在 Google Maps 開啟路線 <span>↗</span></a>
     <small className="routeCaption">路線順序示意，非比例地圖</small>
   </aside>;
@@ -158,7 +158,7 @@ export default function Home(){return <main>
   <section className="overview shell" id="overview"><div className="sectionHeading"><p>TRIP AT A GLANCE</p><h2>十日路線，一眼掌握</h2></div><div className="overviewGrid"><article><span>去程</span><strong>01.01 · 09:15</strong><small>台灣 → 新千歲 14:05</small></article><article><span>移動核心</span><strong>JR 特急北斗</strong><small>札幌 → 洞爺 → 函館 → 札幌</small></article><article><span>回程</span><strong>01.10 · 15:20</strong><small>新千歲 → 台灣</small></article></div>
   <div className="quickNav">{days.map((d,i)=><a href={`#day-${i+1}`} key={d.date}><strong>{d.date}</strong><span>{d.city}</span></a>)}</div></section>
 
-  <section className="itinerary shell" id="itinerary">{days.map((d,i)=><article className={`day day-${d.tone}`} id={`day-${i+1}`} key={d.date}><div className="dayDate"><span>DAY {String(i+1).padStart(2,"0")}</span><strong>{d.date}</strong><em>{d.weekday}</em></div><div className="dayContent"><div className="dayTitle"><p>{d.city}</p><h2>{d.title}</h2></div><div className="dayTransport"><b>當日交通</b><div>{d.transport.map(item=><span key={item}>{item}</span>)}</div></div><div className="dayBackups"><b>當日備案</b><div>{d.backup.map(item=><article key={item[0]}><h3>{item[0]}</h3><p>{item[1]}</p></article>)}</div></div><div className="dayColumns"><ol className="timeline">{d.stops.map(s=><li key={`${d.date}-${s[0]}-${s[1]}`}><time>{s[0] as string}</time><div><h3>{s[1] as string}</h3><p>{s[2] as string}</p>{Array.isArray(s[3])&&<ul className="stopDetails">{s[3].map(item=><li key={item}>{item}</li>)}</ul>}</div></li>)}</ol><DailyRouteMap stops={d.mapStops} mode={d.mapMode} note={d.mapNote} alternatives={d.mapAlternatives} dayNumber={i+1}/></div></div></article>)}</section>
+  <section className="itinerary shell" id="itinerary">{days.map((d,i)=><article className={`day day-${d.tone}`} id={`day-${i+1}`} key={d.date}><div className="dayDate"><span>DAY {String(i+1).padStart(2,"0")}</span><strong>{d.date}</strong><em>{d.weekday}</em></div><div className="dayContent"><div className="dayTitle"><p>{d.city}</p><h2>{d.title}</h2></div><div className="dayTransport"><b>當日交通</b><div>{d.transport.map(item=><span key={item}>{item}</span>)}</div></div><div className="dayBackups"><b>當日備案</b><div>{d.backup.map(item=><article key={item[0]}><h3>{item[0]}</h3><p>{item[1]}</p></article>)}</div></div><div className="dayColumns"><ol className="timeline">{d.stops.map(s=><li key={`${d.date}-${s[0]}-${s[1]}`}><time>{s[0] as string}</time><div><h3>{s[1] as string}</h3><p>{s[2] as string}</p>{Array.isArray(s[3])&&<ul className="stopDetails">{s[3].map(item=><li key={item}>{item}</li>)}</ul>}</div></li>)}</ol><DailyRouteMap stops={d.mapStops} mode={d.mapMode} note={d.mapNote} alternatives={d.mapAlternatives} optionalPlaces={d.mapOptionalPlaces} dayNumber={i+1}/></div></div></article>)}</section>
 
   <section className="checklists shell" id="checklists"><div className="sectionHeading"><p>BOOK AHEAD</p><h2>預約清單</h2></div><div className="listColumns"><article className="listPanel bookingList"><div className="listPanelTitle"><span>RESERVATIONS</span><h3>要預定的</h3></div><ol>{reservations.map((item,i)=><li key={item[1]}><b>{String(i+1).padStart(2,"0")}</b><div><time>{item[0]}</time><h4>{item[1]}</h4><p>{item[2]}</p></div></li>)}</ol></article></div></section>
 
