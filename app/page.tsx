@@ -65,10 +65,10 @@ const days = [
     ["18:30","Keio Prelia 入住","放好行李、稍作休息；當晚不再硬排藻岩山。"],
     ["19:30","狸小路商店街（可選）","體力足夠就搭地下鐵前往狸小路吃晚餐、補逛；累了則留在札幌站用餐。"],
     ["21:30","夜パフェ専門店 ななかま堂（可選）","晚餐後到薄野吃深夜聖代；若從函館回來太累就直接回飯店，2027 年營業時間需再確認。"]]},
-  { date:"01.08", weekday:"FRI", city:"札幌", title:"圓山晨景、海鮮與北大校園", tone:"ice", transport:["札幌地下鐵","步行"], mapMode:"transit", mapStops:["北海道神宮","六花亭 神宮茶屋店","札幌場外市場","北海道大学総合博物館","北大マルシェ Café & Labo","六花亭 札幌本店","薄野"], mapOptionalPlaces:["森彦 MORIHICO. 本店"], backup:[["森彥 MORIHICO. 本店（Optional）","場外市場吃完螃蟹後若還有時間、也想喝咖啡，再前往森彥；若時間較趕就直接去北海道大學。"],["札幌諏訪神社","若北海道神宮周邊提早逛完，可增加另一處神社參拜，以冬季花手水與雪景為主。"],["定山溪溫泉","若更想泡湯，可用定山溪半日或一日往返替換部分札幌行程；先確認巴士與日歸溫泉時間。"]], stops:[
+  { date:"01.08", weekday:"FRI", city:"札幌", title:"圓山晨景、海鮮與北大校園", tone:"ice", transport:["札幌地下鐵","步行"], mapMode:"transit", mapStops:["北海道神宮","六花亭 神宮茶屋店","札幌場外市場","北海道大学総合博物館","北大マルシェ Café & Labo","六花亭 札幌本店","薄野"], mapAlternatives:[["合資会社 蟹ゆで名人｜販售店，店內用餐先確認","https://maps.app.goo.gl/hFp3jeFqEaW9CwMo7"],["北海道特産品販売／おもひで食堂｜附設食堂","https://maps.app.goo.gl/mRdXWagdZh7PfV1V9"],["根室杉山水産／うめぇ堂｜螃蟹與海鮮餐點","https://maps.app.goo.gl/Um5kCNCJWKRbAZta7"]], mapOptionalPlaces:["森彦 MORIHICO. 本店"], backup:[["森彥 MORIHICO. 本店（Optional）","場外市場吃完螃蟹後若還有時間、也想喝咖啡，再前往森彥；若時間較趕就直接去北海道大學。"],["札幌諏訪神社","若北海道神宮周邊提早逛完，可增加另一處神社參拜，以冬季花手水與雪景為主。"],["定山溪溫泉","若更想泡湯，可用定山溪半日或一日往返替換部分札幌行程；先確認巴士與日歸溫泉時間。"]], stops:[
     ["08:00","北海道神宮・圓山公園","回到圓山一帶悠閒散步；若 1/1 參拜匆忙，可補領御守、拍雪景。"],
     ["09:00","六花亭 神宮茶屋店","在境內吃現烤限定甜點「判官さま」；實際營業時間出發前再確認。"],
-    ["10:30","札幌場外市場・海鮮早午餐","吃海鮮丼或壽司並逛市場；店家年始營業與最後點餐時間出發前確認。"],
+    ["10:30","札幌場外市場・螃蟹早午餐（三選一）","從以下三家選一間吃螃蟹；營業與年始安排出發前確認。",["合資会社 蟹ゆで名人｜螃蟹販售店，市場介紹未列店內用餐，想現場吃請先確認。","北海道特産品販売／おもひで食堂｜活蟹專門店，附設食堂可享用現煮螃蟹。","根室杉山水産／うめぇ堂｜水產直賣與食事處，可選螃蟹料理。"]],
     ["12:00（Optional）","森彥 MORIHICO. 本店","場外市場吃完螃蟹後若還有時間、想喝咖啡再前往；如果用餐較久或不想趕，就跳過直接去北大。"],
     ["13:30 前後","北海道大學・綜合博物館","依是否去森彥彈性調整到校時間；參觀校史、自然科學與研究標本展示，目前免費入館、17:00 閉館。"],
     ["15:30 前後","北大マルシェ Café & Labo","到百年紀念會館品嘗北大牛奶、自製起司餐點或義式冰淇淋；時間依前段行程微調。"],
@@ -124,7 +124,7 @@ function mapsDirectionsUrl(stops: string[], mode: string) {
   return `https://www.google.com/maps/dir/?${params.toString()}`;
 }
 
-function DailyRouteMap({ stops, mode, note, alternatives, optionalPlaces, dayNumber }: { stops: string[]; mode: string; note?: string; alternatives?: string[]; optionalPlaces?: string[]; dayNumber: number }) {
+function DailyRouteMap({ stops, mode, note, alternatives, optionalPlaces, dayNumber }: { stops: string[]; mode: string; note?: string; alternatives?: [string, string][]; optionalPlaces?: string[]; dayNumber: number }) {
   const points = stops.map((_, i) => {
     const row = Math.floor(i / 4);
     const col = i % 4;
@@ -140,7 +140,7 @@ function DailyRouteMap({ stops, mode, note, alternatives, optionalPlaces, dayNum
     </div>
     <ol className="routeStopList">{stops.map((stop, i) => <li key={`${i}-${stop}`}><span>{String(i + 1).padStart(2, "0")}</span>{stop}</li>)}</ol>
     {note && <p className="routeNote">{note}</p>}
-    {alternatives?.length ? <div className="mapAlternatives"><b>午餐備案｜Google Maps</b>{alternatives.map(place => <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place)}`} target="_blank" rel="noreferrer" key={place}>{place} ↗</a>)}</div> : null}
+    {alternatives?.length ? <div className="mapAlternatives"><b>場外市場螃蟹三選一｜Google Maps</b>{alternatives.map(([place, url]) => <a href={url} target="_blank" rel="noreferrer" key={place}>{place} ↗</a>)}</div> : null}
     {optionalPlaces?.length ? <div className="mapAlternatives"><b>選擇性停靠｜Google Maps</b>{optionalPlaces.map(place => <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place)}`} target="_blank" rel="noreferrer" key={place}>{place} ↗</a>)}</div> : null}
     <a className="mapsLink" href={mapsDirectionsUrl(stops, mode)} target="_blank" rel="noreferrer">在 Google Maps 開啟路線 <span>↗</span></a>
     <small className="routeCaption">路線順序示意，非比例地圖</small>
