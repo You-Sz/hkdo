@@ -53,7 +53,7 @@ const days = [
     ["11:00","湖之栖退房","辦理退房並搭飯店接駁前往洞爺站；接駁時間需事先確認。"],
     ["12:45","特急北斗・洞爺→函館","搭 12:45 班次由洞爺前往函館，預計 14:40 抵達；指定席偏好 D 列奇數座，依正式時刻表及劃位結果確認。"],
     ["14:40","抵達函館・Tokyu Stay 辦理入住","抵達後先到飯店 check in、放行李。"],
-    ["15:30–18:45","金森紅磚倉庫・港區散策","check in 後直接前往金森，逛倉庫群與商店至接近 19:00；金森散策時一定要吃這家：指定店家與地圖連結見右側路線資訊。"],
+    ["15:30–18:45","金森紅磚倉庫・港區散策","check in 後直接前往金森，逛倉庫群與商店至接近 19:00；一定要吃函館洋菓子スナッフルス（Snaffle's）的起司蛋糕。地圖連結在右側路線資訊。"],
     ["18:45","八幡坂（沿途短暫停留）","若金森提早逛完，可順路看一下八幡坂；若逛到 19:00 就略過此處，直接前往函館山。"],
     ["19:00","出發前往函館山・纜車夜景","前往山麓站搭纜車看夜景；出發前確認天候、運行狀況及上山末班時間。"]]},
   { date:"01.07", weekday:"THU", city:"函館 → 札幌", title:"五稜郭散策、白天八幡坂與夜返札幌", tone:"blue", transport:["函館市電","步行","JR 特急北斗","札幌站步行"], mapMode:"transit", mapStops:["函館朝市","五稜郭タワー","函館駅","ヤマザキ洋服店","八幡坂","Tokyu Stay Hakodate Asaichi","函館駅","札幌駅","Keio Prelia Hotel Sapporo"], mapOptionalPlaces:["HAKODATE NOODLES 炎陣","Angelique Voyage","藻岩山ロープウェイ"], backup:[["1/6 未看到函館夜景｜1/7 提早回札幌看藻岩山","若前晚因天候取消函館山，1/7 提早離開五稜郭塔，回函館站周邊先吃炎陣；若時間充裕再加吃ヤマザキ洋服店，改搭 15:00 前後的車回札幌（約 19:00 抵達），抵達後直接前往藻岩山，並確認冬季纜車上山末班與特急班次。"],["HAKODATE NOODLES 炎陣（備案）","晴天主行程以ヤマザキ洋服店午餐為主；若要提早回函館站用餐，或店家候位／營業不合適，可改吃炎陣。年始營業出發前確認。"],["Angelique Voyage（備案）","若白天八幡坂後到回函館站前仍有空檔，可快速買甜點；可能售完提早打烊，時間不足就略過。"]], stops:[
@@ -141,7 +141,7 @@ function DailyRouteMap({ stops, mode, note, alternatives, optionalPlaces, dayNum
     </div>
     <ol className="routeStopList">{stops.map((stop, i) => <li key={`${i}-${stop}`}><span>{String(i + 1).padStart(2, "0")}</span>{stop}</li>)}</ol>
     {note && <p className="routeNote">{note}</p>}
-    {alternatives?.length ? <div className="mapAlternatives"><b>{dayNumber === 6 ? "金森必吃店家｜Google Maps" : "場外市場螃蟹三選一｜Google Maps"}</b>{alternatives.map(([place, url]) => <a href={url} target="_blank" rel="noreferrer" key={place}>{place} ↗</a>)}</div> : null}
+    {alternatives?.length ? <div className="mapAlternatives"><b>{dayNumber === 6 ? "金森必吃店家｜Google Maps" : "場外市場螃蟹三選一｜Google Maps"}</b>{alternatives.map(([place, url]) => <a href={url} target="_blank" rel="noreferrer" key={place}>{dayNumber === 6 ? "函館洋菓子スナッフルス（Snaffle's）｜必吃起司蛋糕" : place} ↗</a>)}</div> : null}
     {optionalPlaces?.length ? <div className="mapAlternatives"><b>選擇性停靠｜Google Maps</b>{optionalPlaces.map(place => <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place)}`} target="_blank" rel="noreferrer" key={place}>{place} ↗</a>)}</div> : null}
     <a className="mapsLink" href={mapsDirectionsUrl(stops, mode)} target="_blank" rel="noreferrer">在 Google Maps 開啟路線 <span>↗</span></a>
     <small className="routeCaption">路線順序示意，非比例地圖</small>
