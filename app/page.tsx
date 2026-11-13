@@ -47,7 +47,7 @@ const days = [
     ["15:30","湖之栖入住・泡湯","回飯店入住、休息並享受溫泉。"],
     ["18:00","一泊二食","享用飯店晚餐，之後稍作休息。"],
     ["21:00","洞爺湖溫泉燈光隧道","散步欣賞洞爺湖溫泉街中心「にぎわい広場」的燈光隧道；2026–27 活動期間 1/5 點燈時間為 17:00–22:00，注意保暖並預留步行時間。"]]},
-  { date:"01.06", weekday:"WED", city:"函館", title:"金森港區散策與函館山夜景", tone:"snow", transport:["飯店接駁","JR 特急北斗","步行／函館市電","函館山纜車"], mapMode:"transit", mapStops:["ザ・レイクスイート湖の栖","洞爺駅","函館駅","Tokyu Stay Hakodate Asaichi","金森赤レンガ倉庫","八幡坂","函館山ロープウェイ","Tokyu Stay Hakodate Asaichi"], mapOptionalPlaces:["大門横丁"], mapAlternatives:[["金森紅磚倉庫必吃｜Google Maps", "https://maps.app.goo.gl/5CZ6CFS92GZJRaR2A"]], backup:[["函館山天候不佳","若纜車停駛或山頂能見度不佳，就取消上山，改去大門橫町吃晚餐，再回 Tokyu Stay 享受飯店設施；若仍想補夜景，啟用 1/7 提早回札幌看藻岩山的備案。"]], stops:[
+  { date:"01.06", weekday:"WED", city:"函館", title:"金森港區散策與函館山夜景", tone:"snow", transport:["飯店接駁","JR 特急北斗","步行／函館市電","函館山纜車"], mapMode:"transit", mapStops:["ザ・レイクスイート湖の栖","洞爺駅","函館駅","Tokyu Stay Hakodate Asaichi","金森赤レンガ倉庫","八幡坂","函館山ロープウェイ","Tokyu Stay Hakodate Asaichi"], mapOptionalPlaces:["五稜郭公園（天候不佳備案）","五稜郭タワー（天候不佳備案）","五稜郭周邊晚餐","大門横丁"], mapAlternatives:[["金森紅磚倉庫必吃｜Google Maps", "https://maps.app.goo.gl/5CZ6CFS92GZJRaR2A"]], backup:[["函館山天候不佳｜改去五稜郭看夕陽與點燈","若函館山因風雪或能見度不佳不適合上山，check in 後改去五稜郭公園一帶；約 16:00 抵達五稜郭塔，登塔看夕陽與夜間點燈，晚餐在五稜郭周邊解決。出發前確認塔的冬季營業時間、當日夕陽與點燈資訊；若此方案也不合適，改用 1/7 提早回札幌看藻岩山的第二備案。"]], stops:[
     ["08:00","飯店早餐","享用早餐後保留一個悠閒上午，不急著離開飯店。"],
     ["09:30","最後泡湯・湖畔散步","依天候選擇再泡一次溫泉，或到湖畔短暫散步。"],
     ["11:00","湖之栖退房","辦理退房並搭飯店接駁前往洞爺站；接駁時間需事先確認。"],
@@ -56,7 +56,7 @@ const days = [
     ["15:30–18:45","金森紅磚倉庫・港區散策","check in 後直接前往金森，逛倉庫群與商店至接近 19:00；一定要吃函館洋菓子スナッフルス（Snaffle's）的起司蛋糕。地圖連結在右側路線資訊。"],
     ["18:45","八幡坂（沿途短暫停留）","若金森提早逛完，可順路看一下八幡坂；若逛到 19:00 就略過此處，直接前往函館山。"],
     ["19:00","出發前往函館山・纜車夜景","前往山麓站搭纜車看夜景；出發前確認天候、運行狀況及上山末班時間。"]]},
-  { date:"01.07", weekday:"THU", city:"函館 → 札幌", title:"五稜郭散策、白天八幡坂與夜返札幌", tone:"blue", transport:["函館市電","步行","JR 特急北斗","札幌站步行"], mapMode:"transit", mapStops:["函館朝市","五稜郭タワー","函館駅","ヤマザキ洋服店","八幡坂","Tokyu Stay Hakodate Asaichi","函館駅","札幌駅","Keio Prelia Hotel Sapporo"], mapOptionalPlaces:["HAKODATE NOODLES 炎陣","Angelique Voyage","藻岩山ロープウェイ"], backup:[["1/6 未看到函館夜景｜1/7 提早回札幌看藻岩山","若前晚因天候取消函館山，1/7 提早離開五稜郭塔，回函館站周邊先吃炎陣；若時間充裕再加吃ヤマザキ洋服店，改搭 15:00 前後的車回札幌（約 19:00 抵達），抵達後直接前往藻岩山，並確認冬季纜車上山末班與特急班次。"],["HAKODATE NOODLES 炎陣（備案）","晴天主行程以ヤマザキ洋服店午餐為主；若要提早回函館站用餐，或店家候位／營業不合適，可改吃炎陣。年始營業出發前確認。"],["Angelique Voyage（備案）","若白天八幡坂後到回函館站前仍有空檔，可快速買甜點；可能售完提早打烊，時間不足就略過。"]], stops:[
+  { date:"01.07", weekday:"THU", city:"函館 → 札幌", title:"五稜郭散策、白天八幡坂與夜返札幌", tone:"blue", transport:["函館市電","步行","JR 特急北斗","札幌站步行"], mapMode:"transit", mapStops:["函館朝市","五稜郭タワー","函館駅","ヤマザキ洋服店","八幡坂","Tokyu Stay Hakodate Asaichi","函館駅","札幌駅","Keio Prelia Hotel Sapporo"], mapAlternatives:[["茶房 菊泉｜甜點", "https://maps.app.goo.gl/tnzANM1982Bmf96J8"],["舊函館區公會堂｜歷史建築", "https://maps.app.goo.gl/T4L9JxXSZxufnwRk8"]], mapOptionalPlaces:["金森紅磚倉庫・夜間燈飾（1/6 天候不佳備案）","HAKODATE NOODLES 炎陣","Angelique Voyage","茶房 菊泉","舊函館區公會堂","藻岩山ロープウェイ"], backup:[["1/6 函館山天候不佳｜1/7 改走港區・元町","1/7 朝市早餐後退房並寄放行李，接著逛金森紅磚倉庫（約 09:00–12:00）；午餐吃ヤマザキ洋服店（約 12:30）。吃得下再從 Angelique Voyage 或茶房 菊泉（二選一）買甜點；之後看白天八幡坂，時間充裕再去舊函館區公會堂看歷史建築。約 16:30 回金森看夜間倉庫燈飾，18:00–19:00 之間搭車回札幌；記得預留回飯店取行李與到車站的時間，車次以已劃位班次為準。"],["第二層備案｜1/7 午餐後直返札幌・藻岩山夜景","若 1/7 不逛下午港區行程，吃完ヤマザキ洋服店就回函館站取行李，搭約 15:00 前後的特急北斗返札幌，抵達後直接前往藻岩山看夜景。此方案會略過甜點、八幡坂、舊函館區公會堂與金森夜景；先核對車次及藻岩山纜車末班。"],["HAKODATE NOODLES 炎陣（備案）","若原定午餐店候位太久、未營業或想提早回函館站，可改吃炎陣；年始營業出發前確認。"],["Angelique Voyage（甜點備案）","若還吃得下且營業中，可與茶房菊泉二選一；甜點店可能售完或提早打烊，時間不足就略過。"]], stops:[
     ["07:00","函館朝市早餐","在飯店附近的朝市吃早餐。"],
     ["08:15","退房・行李寄放","退房後先將行李寄放飯店，逛完市區後再回站前取行李。"],
     ["09:00–12:00","五稜郭塔周邊散策","逛塔與周邊公園，這天預留較多時間；若 1/6 夜景備案啟用，則提早結束並返回函館站。"],
@@ -141,7 +141,7 @@ function DailyRouteMap({ stops, mode, note, alternatives, optionalPlaces, dayNum
     </div>
     <ol className="routeStopList">{stops.map((stop, i) => <li key={`${i}-${stop}`}><span>{String(i + 1).padStart(2, "0")}</span>{stop}</li>)}</ol>
     {note && <p className="routeNote">{note}</p>}
-    {alternatives?.length ? <div className="mapAlternatives"><b>{dayNumber === 6 ? "金森必吃店家｜Google Maps" : "場外市場螃蟹三選一｜Google Maps"}</b>{alternatives.map(([place, url]) => <a href={url} target="_blank" rel="noreferrer" key={place}>{dayNumber === 6 ? "函館洋菓子スナッフルス（Snaffle's）｜必吃起司蛋糕" : place} ↗</a>)}</div> : null}
+    {alternatives?.length ? <div className="mapAlternatives"><b>{dayNumber === 6 ? "金森必吃店家｜Google Maps" : dayNumber === 7 ? "函館甜點與歷史建築｜Google Maps" : "場外市場螃蟹三選一｜Google Maps"}</b>{alternatives.map(([place, url]) => <a href={url} target="_blank" rel="noreferrer" key={place}>{dayNumber === 6 ? "函館洋菓子スナッフルス（Snaffle's）｜必吃起司蛋糕" : place} ↗</a>)}</div> : null}
     {optionalPlaces?.length ? <div className="mapAlternatives"><b>選擇性停靠｜Google Maps</b>{optionalPlaces.map(place => <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place)}`} target="_blank" rel="noreferrer" key={place}>{place} ↗</a>)}</div> : null}
     <a className="mapsLink" href={mapsDirectionsUrl(stops, mode)} target="_blank" rel="noreferrer">在 Google Maps 開啟路線 <span>↗</span></a>
     <small className="routeCaption">路線順序示意，非比例地圖</small>
