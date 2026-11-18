@@ -8,15 +8,16 @@ const days = [
     ["17:20","北海道神宮參拜（視時間）","參拜時間可能提早結束；若劃位或交通耽誤、或已停止參拜，就改 1/8 早上前往。"],
     ["18:40","薄野晚餐","參拜後返回薄野吃晚餐；想吃拉麵可安排麵屋雪風。"],
     ["20:00","回飯店休息","辦理入住、整理行李，第一晚不再安排逛街。"]]},
-  { date:"01.02", weekday:"SAT", city:"札幌", title:"札幌市區散步與逛街", tone:"ice", transport:["札幌地下鐵","步行"], mapMode:"walking", mapStops:["Vessel Hotel Campana Susukino","札幌電視塔","札幌時計台","大通公園","札幌三越 千秋庵 巴里銅鑼専門店","Stellar Place","大丸札幌店","あべ養鶏場 えっぐぷりん 札幌駅直営店","札幌駅前通地下歩行空間（チ・カ・ホ）","狸小路商店街","牛しゃぶ・すき焼専門店 禅（札幌）"], mapOptionalPlaces:["札幌PARCO"], backup:[["札幌PARCO","列為備案；若在大通商圈逛完仍有時間與體力，再順道前往，年始營業時間出發前確認。"],["大雪・室內行程","若地面交通受影響，就縮短戶外散步，改逛地下街、百貨與狸小路。"]], stops:[
+  { date:"01.02", weekday:"SAT", city:"札幌", title:"札幌市區散步與逛街", tone:"ice", transport:["札幌地下鐵","步行"], mapMode:"walking", mapStops:["Vessel Hotel Campana Susukino","札幌電視塔","札幌時計台","大通公園","札幌三越 千秋庵 巴里銅鑼専門店","CHIIKAWA LAND 札幌PARCO店","Stellar Place","大丸札幌店","あべ養鶏場 えっぐぷりん 札幌駅直営店","札幌駅前通地下歩行空間（チ・カ・ホ）","狸小路商店街","牛しゃぶ・すき焼専門店 禅（札幌）"], mapAlternatives:[["CHIIKAWA LAND 札幌PARCO店", "https://maps.app.goo.gl/VeUKe1xxwKQsLV5y7"]], backup:[["大雪・室內行程","若地面交通受影響，就縮短戶外散步，改逛地下街、百貨與狸小路。"]], stops:[
     ["07:30","Vessel Hotel 早餐","在飯店享用早餐，吃完稍作休息再前往大通。"],
     ["09:30","札幌電視塔","先登塔俯瞰大通；若年始延後開門，就先去時計台散步再回來。"],
     ["10:40","札幌時計台・大通公園","參觀時計台外觀並沿大通公園散步；年始室內開放時間需再確認。"],
     ["11:30","札幌三越・千秋庵 巴里銅鑼專門店","到札幌三越本館 B2F 買巴里銅鑼；年始營業與商品庫存出發前確認。"],
-    ["12:15","Stellar Place","先逛札幌站旁的 Stellar Place，午餐依當下胃口在附近彈性安排。"],
-    ["13:30","大丸札幌店","接著逛大丸札幌店；不另排固定百貨午餐。"],
-    ["14:45","阿部養雞場 えっぐぷりん 札幌站直營店","大丸後順路到札幌站東側大廳、北口附近買雞蛋布丁；店舖平常營業 09:00–20:00，年始營業時間出發前確認。"],
-    ["15:10","地下街散步・札幌站往狸小路","從札幌站沿地下街往大通、薄野方向逛，再接狸小路商店街；依體力與店家年始營業彈性調整。"],
+    ["12:15","CHIIKAWA LAND 札幌PARCO店","安排逛吉伊卡哇商店；PARCO 年始營業與店舖營業時間出發前確認。"],
+    ["13:00","Stellar Place","再逛札幌站旁的 Stellar Place，午餐依當下胃口在附近彈性安排。"],
+    ["14:15","大丸札幌店","接著逛大丸札幌店；不另排固定百貨午餐。"],
+    ["15:30","阿部養雞場 えっぐぷりん 札幌站直營店","大丸後順路到札幌站東側大廳、北口附近買雞蛋布丁；店舖平常營業 09:00–20:00，年始營業時間出發前確認。"],
+    ["15:50","地下街散步・札幌站往狸小路","從札幌站沿地下街往大通、薄野方向逛，再接狸小路商店街；依體力與店家年始營業彈性調整。"],
     ["17:00–20:00","狸小路商店街・自由逛街","沿商店街散步、購物，留意晚餐預約時間。"],
     ["20:30","禪・牛しゃぶ／壽喜燒晚餐","到大通附近的「牛しゃぶ・すき焼専門店 禅」用餐；店家目前營業至 23:00，年始營業與訂位狀況出發前再確認。"]]},
   { date:"01.03", weekday:"SUN", city:"美瑛・富良野", title:"一日遊團的純白風景", tone:"snow", transport:["一日遊巴士","雪上摩托車"], mapMode:"driving", mapNote:"11:30 札幌站北口集合；景點停留與順序依旅行團通知、雪況調整，路線為示意。", mapStops:["札幌站北口","美瑛聖誕樹","白鬚瀑布","四季彩之丘","森林精靈露台","札幌站"], backup:[["風雪・道路管制","依旅行團通知替換或刪減景點；不要自行脫團，雪上摩托車取消時改為園區散步與室內休息。"]], stops:[
@@ -28,15 +29,16 @@ const days = [
     ["約 17:30","四季彩之丘・雪上摩托車（預估）","活動是否包含於團費、開放狀況及體驗時間以旅行團通知為準。"],
     ["約 19:00","森林精靈露台（預估）","傍晚參觀木屋與點燈；實際順序可能依旅行團安排調整。"],
     ["約 22:00","返回札幌（預估）","回到札幌後簡單用餐、休息；實際抵達時間以團方通知為準。"]]},
-  { date:"01.04", weekday:"MON", city:"小樽", title:"沿著堺町走向運河暮色", tone:"blue", transport:["JR 函館本線","步行"], mapMode:"walking", mapStops:["南小樽駅","北一硝子 三号館","ちいかわもぐもぐ本舗 小樽店","小樽蒸気時計","小樽オルゴール堂 本館","LeTAO 本店","小樽芸術村","小樽運河","小樽駅"], backup:[["住吉神社參拜","只有在 08:30 前抵達南小樽站時才去；若超過 08:30，直接前往北一硝子，避免錯過 09:00 點燈。"]], stops:[
+  { date:"01.04", weekday:"MON", city:"小樽", title:"沿著堺町走向運河暮色", tone:"blue", transport:["JR 函館本線","步行"], mapMode:"walking", mapStops:["南小樽駅","北一硝子 三号館","ちいかわもぐもぐ本舗 小樽店","小樽蒸気時計","小樽オルゴール堂 本館","LeTAO 本店","小樽芸術村","小樽運河","小樽Bine","小樽駅"], mapAlternatives:[["小樽Bine｜18:00 晚餐", "https://maps.app.goo.gl/ezWAv1gSvLB6RfHA9"]], backup:[["住吉神社參拜","只有在 08:30 前抵達南小樽站時才去；若超過 08:30，直接前往北一硝子，避免錯過 09:00 點燈。"]], stops:[
     ["07:20","札幌站出發・札幌→小樽","搭早班 JR 前往南小樽站；座位偏好 A/B 列（右側），是否能劃位依實際班次確認。"],
     ["08:20 前後","抵達南小樽站","出站後往堺町通方向移動；住吉神社改列為當日備案，不影響 09:00 北一硝子。"],
     ["09:00","北一硝子三號館・北一廳","觀賞煤油燈逐盞點亮，接著在咖啡廳吃早餐；至少停留 1 小時，約 10:00 再離開。"],
     ["10:05","吉伊卡哇 MOGUMOGU 本舖小樽店","預留約 1 小時購物；目前為 09:30 營業，且可能需要官方 LINE 事前預約。"],
     ["11:10","小樽堺町通商店街周邊","沿 Sakaimachi Street 依序散步與購物，中途安排甜點或輕食。",["小樽蒸汽鐘｜依抵達時間觀賞整點表演。","小樽音樂盒堂本館｜參觀音樂盒展示並選購紀念品。","Un délice 住ノ江創業本店｜購買布丁大福。","北菓樓小樽本館｜購買泡芙與北海道伴手禮。","LeTAO 本店｜逛甜點櫃、外帶或安排短暫下午茶。"]],
     ["13:40","小樽藝術村周邊","往色內方向散步，逐點欣賞玻璃工藝、歷史建築與美術展館；各館年始營業時間須再次確認。",["小樽琉璃工坊｜欣賞玻璃工藝與手作作品。","小樽浪漫館｜逛復古建築內的玻璃與飾品店。","大正硝子館本館｜參觀小樽玻璃器皿與工藝品。","花窗玻璃美術館｜欣賞歷史彩繪玻璃與光影展示。"]],
-    ["15:30","小樽運河","沿運河散步、拍雪景並等待傍晚點燈；之後可在小樽站周邊自由用餐，或依體力提早返札幌。"],
-    ["19:00","返回札幌","晚餐後步行到小樽站，搭 JR 返回札幌。"]]},
+    ["15:30","小樽運河","沿運河散步、拍雪景並等待傍晚點燈。"],
+    ["18:00","小樽Bine 晚餐","依你提供的地點在 Otaru Bine 用晚餐；建議事先確認年始營業並預約。"],
+    ["約 20:00","返回札幌","晚餐後步行到小樽站，搭 JR 返回札幌；依用餐時間與班次調整。"]]},
   { date:"01.05", weekday:"TUE", city:"洞爺湖", title:"湖畔、溫泉街與一泊二食", tone:"ice", transport:["步行","JR 特急北斗","道南巴士／飯店接駁"], mapMode:"transit", mapStops:["札幌駅","洞爺駅","洞爺湖温泉バスターミナル","ザ・レイクスイート湖の栖","洞爺湖温泉にぎわい広場（イルミネーショントンネル）"], backup:[["昭和新山・有珠山纜車","只有天候穩定、纜車運行且交通已預約時，才用此方案替換下午溫泉街散策。"]], stops:[
     ["07:30","Vessel Hotel 早餐","在飯店悠閒享用早餐，吃完回房整理並確認行李。"],
     ["08:15","札幌退房","辦理退房後前往札幌站，預留冬季移動緩衝。"],
@@ -141,7 +143,7 @@ function DailyRouteMap({ stops, mode, note, alternatives, optionalPlaces, dayNum
     </div>
     <ol className="routeStopList">{stops.map((stop, i) => <li key={`${i}-${stop}`}><span>{String(i + 1).padStart(2, "0")}</span>{stop}</li>)}</ol>
     {note && <p className="routeNote">{note}</p>}
-    {alternatives?.length ? <div className="mapAlternatives"><b>{dayNumber === 6 ? "金森必吃店家｜Google Maps" : dayNumber === 7 ? "函館甜點與歷史建築｜Google Maps" : "場外市場螃蟹三選一｜Google Maps"}</b>{alternatives.map(([place, url]) => <a href={url} target="_blank" rel="noreferrer" key={place}>{dayNumber === 6 ? "函館洋菓子スナッフルス（Snaffle's）｜必吃起司蛋糕" : place} ↗</a>)}</div> : null}
+    {alternatives?.length ? <div className="mapAlternatives"><b>{dayNumber === 2 ? "札幌逛街地點｜Google Maps" : dayNumber === 4 ? "小樽晚餐｜Google Maps" : dayNumber === 6 ? "金森必吃店家｜Google Maps" : dayNumber === 7 ? "函館甜點與歷史建築｜Google Maps" : "場外市場螃蟹三選一｜Google Maps"}</b>{alternatives.map(([place, url]) => <a href={url} target="_blank" rel="noreferrer" key={place}>{dayNumber === 6 ? "函館洋菓子スナッフルス（Snaffle's）｜必吃起司蛋糕" : place} ↗</a>)}</div> : null}
     {optionalPlaces?.length ? <div className="mapAlternatives"><b>選擇性停靠｜Google Maps</b>{optionalPlaces.map(place => <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place)}`} target="_blank" rel="noreferrer" key={place}>{place} ↗</a>)}</div> : null}
     <a className="mapsLink" href={mapsDirectionsUrl(stops, mode)} target="_blank" rel="noreferrer">在 Google Maps 開啟路線 <span>↗</span></a>
     <small className="routeCaption">路線順序示意，非比例地圖</small>
