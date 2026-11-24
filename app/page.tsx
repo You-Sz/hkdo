@@ -100,6 +100,32 @@ const days = [
     ["15:20","札幌起飛","返回台灣。"]]}
 ];
 
+const hotelOrigins: Record<number, string> = {
+  2: "Vessel Hotel Campana Susukino",
+  3: "Vessel Hotel Campana Susukino",
+  4: "Vessel Hotel Campana Susukino",
+  5: "Vessel Hotel Campana Susukino",
+  6: "ザ・レイクスイート湖の栖",
+  7: "Tokyu Stay Hakodate Asaichi",
+  8: "Keio Prelia Hotel Sapporo",
+  9: "Keio Prelia Hotel Sapporo",
+  10: "Keio Prelia Hotel Sapporo",
+};
+
+const hotelDepartureStops: Record<number, [string, string, string]> = {
+  3: ["10:45", "飯店出發・前往札幌站北口", "從 Vessel Hotel Campana Susukino 出發，搭地下鐵或計程車前往一日遊集合地點。"],
+  4: ["06:40", "飯店出發・前往札幌站", "從 Vessel Hotel Campana Susukino 出發，搭地下鐵或計程車到札幌站，再轉乘 JR 前往小樽。"],
+  5: ["08:30", "飯店出發・前往札幌站", "退房後從 Vessel Hotel Campana Susukino 出發，前往札幌站搭乘特急北斗。"],
+  7: ["06:40", "飯店出發・前往函館朝市", "從 Tokyu Stay Hakodate Asaichi 出發，步行前往函館朝市吃早餐。"],
+  8: ["07:15", "飯店出發・前往圓山公園", "從 Keio Prelia Hotel Sapporo 出發，搭地下鐵前往北海道神宮。"],
+  9: ["09:00", "飯店出發・前往札幌諏訪神社", "從 Keio Prelia Hotel Sapporo 出發，搭地下鐵或計程車前往諏訪神社。"],
+};
+
+const hotelDepartureIndexes: Record<number, number> = { 3: 1, 4: 0, 5: 2, 7: 0, 8: 0, 9: 1 };
+for (const [dayNumber, departure] of Object.entries(hotelDepartureStops)) {
+  days[Number(dayNumber) - 1].stops.splice(hotelDepartureIndexes[Number(dayNumber)], 0, departure);
+}
+
 const hotels = [
   ["01.01—05","Vessel Hotel Campana Susukino","札幌・4 晚"],
   ["01.05—06","洞爺湖 湖之栖","洞爺湖・1 晚"],
@@ -128,24 +154,26 @@ function mapsDirectionsUrl(stops: string[], mode: string) {
 }
 
 function DailyRouteMap({ stops, mode, note, alternatives, optionalPlaces, dayNumber }: { stops: string[]; mode: string; note?: string; alternatives?: [string, string][]; optionalPlaces?: string[]; dayNumber: number }) {
-  const points = stops.map((_, i) => {
+  const origin = hotelOrigins[dayNumber];
+  const routeStops = origin && stops[0] !== origin ? [origin, ...stops] : stops;
+  const points = routeStops.map((_, i) => {
     const row = Math.floor(i / 4);
     const col = i % 4;
     return { x: row % 2 === 0 ? 18 + col * 86 : 276 - col * 86, y: 18 + row * 42 };
   });
   return <aside className="dailyMap" aria-label={`DAY ${dayNumber} 路線順序`}>
-    <div className="dailyMapHead"><span>DAY {String(dayNumber).padStart(2, "0")} · ROUTE</span><span>{stops.length} 個點</span></div>
+    <div className="dailyMapHead"><span>DAY {String(dayNumber).padStart(2, "0")} · ROUTE</span><span>{routeStops.length} 個點</span></div>
     <div className="routeSketch" aria-hidden="true">
       <svg viewBox="0 0 300 120" preserveAspectRatio="none">
         <path d={points.map((p, i) => `${i ? "L" : "M"}${p.x},${p.y}`).join(" ")} />
       </svg>
       {points.map((p, i) => <span className={`routeDot${i === 0 || i === points.length - 1 ? " routeDotEnd" : ""}`} style={{ left: `${p.x / 3}%`, top: `${p.y / 1.2}%` }} key={`${i}-${p.x}`}>{i + 1}</span>)}
     </div>
-    <ol className="routeStopList">{stops.map((stop, i) => <li key={`${i}-${stop}`}><span>{String(i + 1).padStart(2, "0")}</span>{stop}</li>)}</ol>
+    <ol className="routeStopList">{routeStops.map((stop, i) => <li key={`${i}-${stop}`}><span>{String(i + 1).padStart(2, "0")}</span>{stop}</li>)}</ol>
     {note && <p className="routeNote">{note}</p>}
     {alternatives?.length ? <div className="mapAlternatives"><b>{dayNumber === 2 ? "札幌逛街地點｜Google Maps" : dayNumber === 4 ? "小樽晚餐｜Google Maps" : dayNumber === 6 ? "金森必吃店家｜Google Maps" : dayNumber === 7 ? "函館甜點與歷史建築｜Google Maps" : "場外市場螃蟹三選一｜Google Maps"}</b>{alternatives.map(([place, url]) => <a href={url} target="_blank" rel="noreferrer" key={place}>{dayNumber === 6 ? "函館洋菓子スナッフルス（Snaffle's）｜必吃起司蛋糕" : place} ↗</a>)}</div> : null}
     {optionalPlaces?.length ? <div className="mapAlternatives"><b>選擇性停靠｜Google Maps</b>{optionalPlaces.map(place => <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place)}`} target="_blank" rel="noreferrer" key={place}>{place} ↗</a>)}</div> : null}
-    <a className="mapsLink" href={mapsDirectionsUrl(stops, mode)} target="_blank" rel="noreferrer">在 Google Maps 開啟路線 <span>↗</span></a>
+    <a className="mapsLink" href={mapsDirectionsUrl(routeStops, mode)} target="_blank" rel="noreferrer">在 Google Maps 開啟路線 <span>↗</span></a>
     <small className="routeCaption">路線順序示意，非比例地圖</small>
   </aside>;
 }
